@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  div(class='user_block')
+    form(action='/')
+      div(class='ind')
+        input(type='submit' value='На домашнюю страничку' class='button_class')
+    div
+      form(action='/rab' method='POST')
+        div(class='ind')
+          input(type='text' placeholder='Введите ФИО работника' name='rab' class='input_style')
+        div(class='ind')
+          input(type='submit' value='Найти задания' class='button_class')
+    div
+      if problems_list
+        each val in problems_list
+          div(class='list_block')
+            div(class='ind')
+              span='ФИО: '
+              span=val.fio
+            div(class='ind')
+              span='Телефон: '
+              span=val.phone
+            div(class='ind')
+              span='Проблема: '
+              span=val.problem
+
+            form(action='/rab' method='POST')
+              div(class='ind')
+                textarea(name='comment' class='input_style')
+              input(type='hidden' value=val.problem name='problem')
+              input(type='hidden' value=val.fio name='fio')
+              div(class='ind')
+                input(type='submit' value='Проблема решена' class='button_class')
+
+
+

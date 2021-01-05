@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class='user_block')
+    div(class='ind')
+      form(action='/user')
+        input(type='submit' value='Оставить заявку' class='button_class')
+    div(class='ind')
+      form(action='/boss')
+        input(type='submit' value='Для руководителя' class='button_class')
+    div(class='ind')
+      form(action='/rab')
+        input(type='submit' value='Для работника' class='button_class')

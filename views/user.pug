@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div(class='user_block')
+    form(action='/user' method='POST')
+      div(class='ind')
+        input(type='text' placeholder='Ваше ФИО' name='fio' class='input_style')
+      div(class='ind')
+        input(type='text' placeholder='Ваш телефон' name='phone' class='input_style')
+      div(class='ind')
+        textarea(placeholder='Описание проблемы' name='problem' class='input_style')
+      div(class='ind')
+        input(type='submit' value='Оставить заявку' class='button_class')
+
+    form(action='/')
+      div(class='ind')
+        input(type='submit' value='На домашнюю страничку' class='button_class')
